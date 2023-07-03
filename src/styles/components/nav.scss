@@ -1,0 +1,254 @@
+@import "../components/variables";
+@import "../components/global";
+
+nav {
+    .container {
+        
+        .nav__top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+            gap: 36px;
+
+            .nav__top-left {
+                .burger__menu {
+                    cursor: pointer;
+                    display: none;
+                    svg {
+                        path {
+                            fill: $svgGray;
+                        }
+                        &:nth-child(1) {
+                            display: block;
+                        }
+                        &:nth-child(2) {
+                            display: none;
+                        }
+                    }
+                }
+
+                .logo {
+                    a {
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            .nav__top-right {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 70%;
+                gap: 20px;
+
+                .search {
+                    position: relative;
+                    width: 572px;
+
+                    form {
+                        button {
+                            height: 48px;
+                            position: absolute;
+                            border: none;
+                            background: transparent;
+                            padding-left: 16px;
+                            cursor: pointer;
+
+                            svg {
+                                fill: #777777;
+                            }
+                        }
+
+                        input {
+                            width: 100%;
+                            border-radius: 50px;
+                            border: 1px solid #777777;
+                            height: 48px;
+                            padding-left: 48px;
+                        }
+                    }
+                }
+
+                .icons {
+                    cursor: pointer;
+                    display: flex;
+                    max-width: 152px;
+                    gap: 24px;
+
+                    .icons-log__in,
+                    .icons-wish__list,
+                    .icons-to__basket {
+                        svg {
+                            stroke: $darkText;
+
+                            &:nth-child(2) {
+                                path {
+                                    fill: none;
+                                    stroke: $darkText;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            @media screen and (max-width: $tabletL) {
+                .nav__top-right {
+                    .search {
+                        form {
+                            input {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            @media screen and (max-width: $mobileM) {
+                justify-content: space-between;
+
+                .nav__top-left {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 20px;
+
+                    .burger__menu {
+                        display: block;
+                    }
+
+                    .logo {
+                        a {
+                            img {
+                                width: 80%;
+                            }
+                        }
+                    }
+                }
+
+                .nav__top-right {
+
+                    width: unset;
+
+                    .search {
+                        width: unset;
+                        height: 48px;
+
+                        form {
+                            button {
+                                position: absolute;
+                                top: 0;
+                                left: -48px;
+
+                            }
+
+                            input {
+                                display: none;
+                            }
+                        }
+
+                    }
+
+                    .icons {
+
+                        .icons-to__basket {
+                            padding-right: 0px;
+                        }
+
+                        .icons-log__in,
+                        .icons-wish__list {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .nav__bottom {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80px;
+
+            .nav__menu {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                gap: 24px;
+
+                .nav__menu-item {
+                    a {
+                        position: relative;
+                        text-decoration: none;
+                        color: $darkText;
+                        font-size: 20px;
+
+                        &::before {
+                            content: "";
+                            width: 0%;
+                            height: 2px;
+                            background: $darkText;
+                            position: absolute;
+                            left: 0;
+                            bottom: -5px;
+                            transition: $trs;
+                        }
+
+                        &:hover {
+                            &::before {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            @media screen and (max-width: $mobileM) {
+                height: 0;
+                .nav__menu {
+                    position: absolute;
+                    flex-direction: column;
+                    align-items: start;
+                    background: $lightText;
+                    width: 60%;
+                    left: -1000px;
+                    top: 110px;
+                    gap: 0;
+                    transition: $trs;
+                    z-index: 1000;
+
+                    .nav__menu-item {
+                        cursor: pointer;
+                        width: 100%;
+                        min-height: 32px;
+                        padding: 24px;
+
+                        &:hover {
+                            background: $primaryLargeHovered;
+
+                            a {
+                                color: $lightText;
+                            }
+                        }
+
+                        a {
+                            &::before {
+                                display: none;
+                            }
+                        }
+
+                    }
+
+                    .nav__menu .active {
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+}

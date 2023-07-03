@@ -1,0 +1,212 @@
+@import "../components/variables";
+@import "../components/global";
+
+footer {
+    background-color: $primaryGray;
+
+    .footer {
+        margin-top: 80px;
+
+        .footer__top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 60px;
+            padding: 64px 0;
+
+            .footer__top__left {
+                padding-right: 64px;
+                border-right: 0.5px solid rgb(0, 0, 0, 0.3);
+
+                .footer__top__left-items {
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 80px;
+
+                    .ftli-item {
+                        // padding-top: 24px;
+
+                        h4 {
+                            color: $darkText;
+                            font-size: 20px;
+                            line-height: 30px;
+                            font-weight: 700;
+                            padding-bottom: 16px;
+                            white-space: nowrap;
+                        }
+
+                        ul {
+                            li {
+                                list-style-type: none;
+
+                                a {
+                                    display: block;
+                                    text-decoration: none;
+                                    color: $darkText;
+                                    font-size: 16px;
+                                    line-height: 24px;
+                                    white-space: nowrap;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .footer__top__right {
+
+                .ftr-top {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 64px;
+
+                    .ftr-top-left {
+                        span {
+                            color: $darkText;
+                            font-size: 20px;
+                            line-height: 30px;
+                            font-weight: 700;
+                        }
+                    }
+
+                    .ftr-top-right {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        gap: 32px;
+
+                        a {
+                            svg {}
+                        }
+                    }
+                }
+
+                .ftr-bottom {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    gap: 32px;
+
+                    .ftr-bottom-left {
+                        p {
+                            font-size: 16px;
+                            color: $darkText;
+                            line-height: 24px;
+                        }
+                    }
+
+                    .ftr-bottom-right {
+                        form {
+                            display: flex;
+                            justify-content: flex-start;
+
+                            .ftr-bottom-right-input {
+                                border-radius: $br;
+                                padding: 16px;
+                                border: none;
+                            }
+
+                            .ftr-bottom-right-btn {
+                                border-radius: $br;
+                                border: none;
+                                padding: 12px 16px;
+                                font-size: 16px;
+                                line-height: 24px;
+                                cursor: pointer;
+                                color: $white;
+                                background-color: $primaryLargeActive;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .footer__bottom {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 64px;
+            border-top: 0.5px solid rgb(0, 0, 0, 0.3);
+            padding: 16px 0;
+
+            .footer__bottom-icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 16px;
+
+                svg {}
+
+                span {
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: $darkText;
+                }
+            }
+
+            .footer__bottom-privacy,
+            .footer__bottom-terms {
+                font-size: 16px;
+                line-height: 24px;
+                color: $darkText;
+                text-decoration: none;
+            }
+        }
+
+        @media screen and (max-width: 1140px) {
+            .footer__top {
+                gap: 32px;
+
+                .footer__top__left {
+                    padding-right: 32px;
+
+                    .footer__top__left-items {
+                        flex-wrap: wrap;
+                        gap: 32px;
+                    }
+                }
+            }
+        }
+
+        @media screen and (max-width: $tabletL) {
+            .footer__top {
+                flex-wrap: wrap;
+
+                .footer__top__left {
+                    border-right: none;
+                    width: 100%;
+                }
+
+                .footer__top__right {
+                    width: 100%;
+                }
+            }
+        }
+
+        @media screen and (max-width: $mobileM) {
+            .footer__top {
+                gap: 32px;
+                .footer__top__right {
+                    .ftr-bottom {
+                        flex-wrap: wrap;
+                        .ftr-bottom-right {
+                            form {
+                                .ftr-bottom-right-btn {
+                                    padding: 8px 12px;
+                                }
+                            }
+                        }
+                       
+                    }
+                }
+
+            }
+
+            .footer__bottom {
+                gap: 32px;
+            }
+        }
+    }
+}

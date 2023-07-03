@@ -1,0 +1,53 @@
+@import "../components/variables";
+@import "../components/global";
+
+.top-header__section {
+    text-align: center;
+    background: $primaryBrown;
+    height: 40px;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+
+    @media screen and (max-width: $mobileS) {
+        font-size: 12px;
+    }
+}
+
+header {
+    background-color: $primaryBrown;
+     // background-image: url("../../assets/header-img.jpg");
+    .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 400px;
+
+        // .header__img {
+        //     position: absolute;
+        //     max-height: 608px;
+        //     img {
+        //         width: 100%;
+        //     }
+        // }
+
+        .header__title {
+            font-family: "Lora-Regular", sans-serif;
+            font-size: min(100px, max(50px + 2vw));
+            color: $white;
+            text-align: center;
+            line-height: min(120px, max(60% + 2vw));
+            width: 70%;
+            margin: 0;
+            margin-bottom: 36px;
+        }
+
+        .header__btn {
+          
+        }
+    }
+}

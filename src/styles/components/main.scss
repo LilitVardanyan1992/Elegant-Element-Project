@@ -1,0 +1,317 @@
+@import "../components/variables";
+@import "../components/global";
+
+main {
+    .main {
+        .products__template {
+            margin-top: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .products__template-title {
+                font-family: "Lora-Regular";
+                font-size: 24px;
+                line-height: 36px;
+                color: $darkText;
+            }
+
+            .products__template-view-all {
+                display: block;
+                color: $darkText;
+                font-size: 18px;
+                text-decoration: none;
+                border-bottom: 1px solid $darkText;
+                margin-bottom: 48px;
+                margin-top: 16px;
+            }
+
+            .products__template-items {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 24px;
+
+                .products__template-item {
+                    position: relative;
+                    max-width: 402px;
+                    max-height: 716px;
+                    border-radius: $br;
+
+                    .pti-header {
+                        position: relative;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        max-width: 402px;
+                        max-height: 597px;
+
+                        .pti-img {
+                            // position: absolute;
+                            width: 100%;
+                            height: 100%;
+                        }
+
+                        .pti-wishlist {
+                            position: relative;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 40px;
+                            height: 40px;
+                            background-color: #F6F3F2;
+                            opacity: 0.5;
+                            border-radius: 50px;
+                            position: absolute;
+                            top: 16px;
+                            right: 16px;
+                        }
+
+                        .pti-sale {
+                            position: absolute;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            z-index: 10;
+                            width: 81px;
+                            height: 48px;
+                            bottom: 16px;
+                            right: 0px;
+                            background-color: rgb(246, 243, 242, 0.5);
+                            border-radius: 25px 0px 0px 25px;
+
+                        }
+                    }
+
+                    .pti-title {
+                        font-size: 16px;
+                        height: 50px;
+                        line-height: 26px;
+                        color: $darkText;
+                    }
+
+                    .pti-star-review {
+                        display: flex;
+                        gap: 16px;
+                        align-items: center;
+                        margin: 4px 0px 16px 0px;
+
+                        // justify-content: center;
+                        .pti-star {
+                            display: flex;
+                            align-items: center;
+                            gap: 6px;
+
+
+                            p {
+                                color: #4F4F4F;
+                            }
+                        }
+
+                        .pti-review {
+                            color: $mediumGray;
+                        }
+                    }
+
+                    .pti-price-to-basket {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        .pti-price-sale {
+                            .pti-price-sale__preview {
+                                color: #5B5B5B;
+                                font-size: 18px;
+                                padding-right: 16px;
+                            }
+
+                            .pti-price-sale__present {
+                                color: $red;
+                                font-size: 24px;
+                            }
+                        }
+
+                        .pti-price {
+                            font-size: 24px;
+                            font-weight: 700;
+                            color: $darkText;
+                        }
+
+                        .pti-basket {
+                            svg {}
+                        }
+                    }
+                }
+
+                @media screen and (max-width: $mobileL) {
+                    flex-wrap: wrap;
+
+                    .products__template-item {
+                        width: 45%;
+                    }
+                }
+            }
+        }
+
+        .table__decor__colection {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 60px;
+            background-color: $primaryGray;
+
+            .tdc-title {
+                margin-top: 48px;
+                color: $darkText;
+                font-size: 32px;
+                line-height: 48px;
+                font-family: "Lora-Regular";
+                text-align: center;
+            }
+
+            .tdc-about {
+                color: $darkText;
+                font-size: 20px;
+                line-height: 30px;
+                text-align: center;
+                margin-bottom: 32px;
+            }
+
+            .tdc__items {
+                display: flex;
+                flex-wrap: wrap;
+                padding: 20px;
+                gap: 20px;
+
+                .tdc__item {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    flex-direction: column;
+                    width: 48%;
+
+                    .tdc__item-img {
+                        max-width: 828px;
+                        max-height: 544px;
+
+                        img {
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+
+                    .tdc__item-title {
+                        position: absolute;
+                        font-size: 28px;
+                        line-height: 42px;
+                        font-weight: 700;
+                        font-family: "Lora-Regular";
+                        color: $white;
+                        text-align: center;
+                    }
+
+                    .tdc__item-btn {
+                        position: absolute;
+                        bottom: 18%;
+                    }
+                }
+            }
+
+            @media screen and (max-width: $mobileL) {
+                .tdc__items {
+                    .tdc__item {
+                        .tdc__item-title {
+                            font-size: 18px;
+                        }
+
+                        .tdc__item-btn {
+                            padding: 8px 12px;
+                            font-size: 10px;
+                        }
+                    }
+                }
+            }
+
+            @media screen and (max-width: $mobileM) {
+                .tdc__items {
+                    .tdc__item {
+                        width: 100%;
+
+                        .tdc__item-btn {
+                            bottom: 26%;
+                        }
+                    }
+                }
+            }
+        }
+
+        .gift__card__section {
+           
+            .container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 80px;
+                margin-top: 60px;
+                background-color: $primaryGray;
+                padding: 62px 20px;
+                
+                .gift__card__section-left {
+                   width: 686px;
+                   height: 280px;
+
+                    .gcs-left-logo {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 50px;
+                        background: #958172;
+                    }
+                }
+
+                .gift__card__section-right {
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: center;
+                    flex-direction: column;
+                    width: 60%;
+                    gap: 32px;
+                    .gcs-right-title {
+                        font-family: "Lora-Regular";
+                        color: $darkText;
+                        font-size: 32px;
+                        line-height: 48px;
+                    }
+                    .gcs-right-about {
+                        font-size: 20px;
+                        line-height: 30px;
+                        color: $darkText;
+                    }
+                    .gcs-right-btn {
+                        color: $white;
+                        background: $primaryLargeActive;
+                    }
+                }
+
+                @media screen and (max-width: $mobileL) {
+                    flex-wrap: wrap;
+                    gap: 32px;
+                    .gift__card__section-right {
+                        gap: 16px;
+                        align-items: center;
+                        .gcs-right-title,
+                        .gcs-right-about {
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
